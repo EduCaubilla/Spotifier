@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -30,6 +30,7 @@
 		7735239F2A6991CD00FA9CA4 /* Artist.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7735239E2A6991CD00FA9CA4 /* Artist.swift */; };
 		773523A22A6991D900FA9CA4 /* UserProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 773523A12A6991D800FA9CA4 /* UserProfile.swift */; };
 		779B8E762A6EA122000C3C73 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 779B8E752A6EA122000C3C73 /* Extensions.swift */; };
+		77A395452A701C4D00A1E8D5 /* SFSafeSymbols in Frameworks */ = {isa = PBXBuildFile; productRef = 77A395442A701C4D00A1E8D5 /* SFSafeSymbols */; };
 		77A809CA2A6EDECD0041D72A /* AuthResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77A809C92A6EDECD0041D72A /* AuthResponse.swift */; };
 /* End PBXBuildFile section */
 
@@ -67,6 +68,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				77A395452A701C4D00A1E8D5 /* SFSafeSymbols in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -201,6 +203,9 @@
 			dependencies = (
 			);
 			name = Spotifier;
+			packageProductDependencies = (
+				77A395442A701C4D00A1E8D5 /* SFSafeSymbols */,
+			);
 			productName = Spotifier;
 			productReference = 7735234E2A698CEC00FA9CA4 /* Spotifier.app */;
 			productType = "com.apple.product-type.application";
@@ -228,6 +233,9 @@
 				Base,
 			);
 			mainGroup = 773523452A698CEC00FA9CA4;
+			packageReferences = (
+				77A395432A701C4D00A1E8D5 /* XCRemoteSwiftPackageReference "SFSafeSymbols" */,
+			);
 			productRefGroup = 7735234F2A698CEC00FA9CA4 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -469,6 +477,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		77A395432A701C4D00A1E8D5 /* XCRemoteSwiftPackageReference "SFSafeSymbols" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SFSafeSymbols/SFSafeSymbols";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 4.1.1;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		77A395442A701C4D00A1E8D5 /* SFSafeSymbols */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 77A395432A701C4D00A1E8D5 /* XCRemoteSwiftPackageReference "SFSafeSymbols" */;
+			productName = SFSafeSymbols;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 773523462A698CEC00FA9CA4 /* Project object */;
 }
