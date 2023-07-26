@@ -31,6 +31,7 @@
 		773523A22A6991D900FA9CA4 /* UserProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 773523A12A6991D800FA9CA4 /* UserProfile.swift */; };
 		779B8E762A6EA122000C3C73 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 779B8E752A6EA122000C3C73 /* Extensions.swift */; };
 		77A395452A701C4D00A1E8D5 /* SFSafeSymbols in Frameworks */ = {isa = PBXBuildFile; productRef = 77A395442A701C4D00A1E8D5 /* SFSafeSymbols */; };
+		77A395482A70348300A1E8D5 /* SettingsModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77A395472A70348300A1E8D5 /* SettingsModels.swift */; };
 		77A809CA2A6EDECD0041D72A /* AuthResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77A809C92A6EDECD0041D72A /* AuthResponse.swift */; };
 /* End PBXBuildFile section */
 
@@ -60,6 +61,7 @@
 		7735239E2A6991CD00FA9CA4 /* Artist.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Artist.swift; sourceTree = "<group>"; };
 		773523A12A6991D800FA9CA4 /* UserProfile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfile.swift; sourceTree = "<group>"; };
 		779B8E752A6EA122000C3C73 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		77A395472A70348300A1E8D5 /* SettingsModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsModels.swift; sourceTree = "<group>"; };
 		77A809C92A6EDECD0041D72A /* AuthResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthResponse.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -137,6 +139,7 @@
 				7735239E2A6991CD00FA9CA4 /* Artist.swift */,
 				773523A12A6991D800FA9CA4 /* UserProfile.swift */,
 				77A809C92A6EDECD0041D72A /* AuthResponse.swift */,
+				77A395472A70348300A1E8D5 /* SettingsModels.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -279,6 +282,7 @@
 				779B8E762A6EA122000C3C73 /* Extensions.swift in Sources */,
 				7735238A2A69900F00FA9CA4 /* PlaylistViewController.swift in Sources */,
 				7735239F2A6991CD00FA9CA4 /* Artist.swift in Sources */,
+				77A395482A70348300A1E8D5 /* SettingsModels.swift in Sources */,
 				773523542A698CEC00FA9CA4 /* SceneDelegate.swift in Sources */,
 				773523872A698FFB00FA9CA4 /* PlayerViewController.swift in Sources */,
 				7735238D2A69902800FA9CA4 /* SearchResultViewController.swift in Sources */,
