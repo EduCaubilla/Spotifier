@@ -15,7 +15,7 @@ struct UserProfile : Codable {
     let explicit_content: [String: Bool]
     let external_urls: [String: String]
     let id: String
-    let images: [UserImage?]
+    let images: [UserImage]
     let product: String
 }
 
