@@ -9,8 +9,8 @@ import UIKit
 
 enum BrowseSectionType {
     case newReleases(viewModels: [NewReleasesCellViewModel])  // 1
-    case featuredPlaylists(viewModels: [NewReleasesCellViewModel]) // 2 - FeaturedPlaylistCellViewModel
-    case recommendedTracks(viewModels: [NewReleasesCellViewModel]) // 3 - RecommendedTrackCellViewModel
+    case featuredPlaylists(viewModels: [FeaturedPlaylistCellViewModel]) // 2
+    case recommendedTracks(viewModels: [RecommendedTrackCellViewModel]) // 3
 }
 
 class HomeViewController: UIViewController {
@@ -172,8 +172,23 @@ class HomeViewController: UIViewController {
                 artistName: $0.artists.first?.name ?? "Unknown Artist"
             )
         })))
-        sections.append(.featuredPlaylists(viewModels: []))
-        sections.append(.recommendedTracks(viewModels: []))
+        
+        sections.append(.featuredPlaylists(viewModels: playlists.compactMap({
+            return FeaturedPlaylistCellViewModel(
+                name: $0.name,
+                artworkURL: URL(string: $0.images.first?.url ?? ""),
+                creatorName: $0.owner.display_name
+            )
+        })))
+        
+        sections.append(.recommendedTracks(viewModels: tracks.compactMap({
+            return RecommendedTrackCellViewModel(
+                name: $0.name,
+                artistName: $0.artists.first?.name ?? "Unknown Artist",
+                id: $0.id,
+                artworkURL: URL(string: $0.album.images.first?.url ?? ""))
+        })))
+        
         collectionView.reloadData()
     }
 
@@ -224,7 +239,7 @@ extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSour
                 ) as? FeaturedPlaylistCollectionViewCell else {
                     return UICollectionViewCell()
                 }
-                cell.backgroundColor = .blue
+            cell.configure(with: viewModels[indexPath.row])
                 return cell
             
             case .recommendedTracks(let viewModels):
@@ -234,21 +249,9 @@ extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSour
                 ) as? RecommendedTrackCollectionViewCell else {
                     return UICollectionViewCell()
                 }
-                cell.backgroundColor = .orange
+            cell.configure(with: viewModels[indexPath.row])
                 return cell
         }
-        
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath)
-        if indexPath.section == 0{
-            cell.backgroundColor = .systemGreen
-        }
-        else if indexPath.section == 1 {
-            cell.backgroundColor = .systemPink
-        }
-        else if indexPath.section == 2 {
-            cell.backgroundColor = .systemBlue
-        }
-        return cell
     }
     
     static func createSectionLayout(section: Int) -> NSCollectionLayoutSection {
