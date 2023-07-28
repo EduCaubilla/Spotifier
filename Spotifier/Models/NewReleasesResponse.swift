@@ -36,8 +36,6 @@ struct Album : Codable{
 }
 
 
-
-
 //JSON Example
 
 //    {
