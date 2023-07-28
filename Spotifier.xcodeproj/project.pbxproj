@@ -29,6 +29,7 @@
 		7735239C2A6990A500FA9CA4 /* AudioTrack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7735239B2A6990A500FA9CA4 /* AudioTrack.swift */; };
 		7735239F2A6991CD00FA9CA4 /* Artist.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7735239E2A6991CD00FA9CA4 /* Artist.swift */; };
 		773523A22A6991D900FA9CA4 /* UserProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 773523A12A6991D800FA9CA4 /* UserProfile.swift */; };
+		7752C0A42A73C0ED00E20C82 /* NewReleasesCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7752C0A32A73C0ED00E20C82 /* NewReleasesCellViewModel.swift */; };
 		7764B2442A738AFA00B9C84A /* RecommendationsResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7764B2432A738AFA00B9C84A /* RecommendationsResponse.swift */; };
 		7764B2472A73B62C00B9C84A /* NewReleaseCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7764B2462A73B62C00B9C84A /* NewReleaseCollectionViewCell.swift */; };
 		7764B2492A73B65400B9C84A /* FeaturedPlaylistCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7764B2482A73B65400B9C84A /* FeaturedPlaylistCollectionViewCell.swift */; };
@@ -50,7 +51,7 @@
 		7735234E2A698CEC00FA9CA4 /* Spotifier.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Spotifier.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		773523512A698CEC00FA9CA4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		773523532A698CEC00FA9CA4 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		773523552A698CEC00FA9CA4 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		773523552A698CEC00FA9CA4 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		7735235A2A698CED00FA9CA4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		7735235D2A698CED00FA9CA4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		7735235F2A698CED00FA9CA4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -71,6 +72,7 @@
 		7735239B2A6990A500FA9CA4 /* AudioTrack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioTrack.swift; sourceTree = "<group>"; };
 		7735239E2A6991CD00FA9CA4 /* Artist.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Artist.swift; sourceTree = "<group>"; };
 		773523A12A6991D800FA9CA4 /* UserProfile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfile.swift; sourceTree = "<group>"; };
+		7752C0A32A73C0ED00E20C82 /* NewReleasesCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewReleasesCellViewModel.swift; sourceTree = "<group>"; };
 		7764B2432A738AFA00B9C84A /* RecommendationsResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecommendationsResponse.swift; sourceTree = "<group>"; };
 		7764B2462A73B62C00B9C84A /* NewReleaseCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewReleaseCollectionViewCell.swift; sourceTree = "<group>"; };
 		7764B2482A73B65400B9C84A /* FeaturedPlaylistCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeaturedPlaylistCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -130,8 +132,8 @@
 			children = (
 				7735236C2A698D4500FA9CA4 /* Resources */,
 				7735236A2A698D3600FA9CA4 /* Managers */,
-				773523692A698D2A00FA9CA4 /* Models */,
 				773523682A698D2100FA9CA4 /* ViewModels */,
+				773523692A698D2A00FA9CA4 /* Models */,
 				773523672A698D1700FA9CA4 /* Views */,
 				773523662A698D0C00FA9CA4 /* Controllers */,
 				7735235F2A698CED00FA9CA4 /* Info.plist */,
@@ -160,6 +162,7 @@
 		773523682A698D2100FA9CA4 /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
+				7752C0A32A73C0ED00E20C82 /* NewReleasesCellViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -381,6 +384,7 @@
 				7764B2442A738AFA00B9C84A /* RecommendationsResponse.swift in Sources */,
 				7766AFD02A72BB27002C94A3 /* NewReleasesResponse.swift in Sources */,
 				7735239C2A6990A500FA9CA4 /* AudioTrack.swift in Sources */,
+				7752C0A42A73C0ED00E20C82 /* NewReleasesCellViewModel.swift in Sources */,
 				7764B2472A73B62C00B9C84A /* NewReleaseCollectionViewCell.swift in Sources */,
 				7735237B2A698FBE00FA9CA4 /* AuthViewController.swift in Sources */,
 				7764B2492A73B65400B9C84A /* FeaturedPlaylistCollectionViewCell.swift in Sources */,
@@ -465,7 +469,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -520,7 +524,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
