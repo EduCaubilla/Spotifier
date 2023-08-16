@@ -50,6 +50,8 @@
 		7768E2612A84C18400786017 /* AllCategoriesResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7768E2602A84C18400786017 /* AllCategoriesResponse.swift */; };
 		7768E2632A84E01900786017 /* CategoryCollectionViewCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7768E2622A84E01900786017 /* CategoryCollectionViewCellViewModel.swift */; };
 		7768E2652A84E7EB00786017 /* CategoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7768E2642A84E7EB00786017 /* CategoryViewController.swift */; };
+		7772CAA82A8CA22500BC9E46 /* SearchResultResponsse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7772CAA72A8CA22500BC9E46 /* SearchResultResponsse.swift */; };
+		7772CAAB2A8CA51900BC9E46 /* SearchResults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7772CAAA2A8CA51900BC9E46 /* SearchResults.swift */; };
 		779B8E762A6EA122000C3C73 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 779B8E752A6EA122000C3C73 /* Extensions.swift */; };
 		77A395452A701C4D00A1E8D5 /* SFSafeSymbols in Frameworks */ = {isa = PBXBuildFile; productRef = 77A395442A701C4D00A1E8D5 /* SFSafeSymbols */; };
 		77A395482A70348300A1E8D5 /* SettingsModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77A395472A70348300A1E8D5 /* SettingsModels.swift */; };
@@ -107,6 +109,8 @@
 		7768E2602A84C18400786017 /* AllCategoriesResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllCategoriesResponse.swift; sourceTree = "<group>"; };
 		7768E2622A84E01900786017 /* CategoryCollectionViewCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryCollectionViewCellViewModel.swift; sourceTree = "<group>"; };
 		7768E2642A84E7EB00786017 /* CategoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryViewController.swift; sourceTree = "<group>"; };
+		7772CAA72A8CA22500BC9E46 /* SearchResultResponsse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultResponsse.swift; sourceTree = "<group>"; };
+		7772CAAA2A8CA51900BC9E46 /* SearchResults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResults.swift; sourceTree = "<group>"; };
 		779B8E752A6EA122000C3C73 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		77A395472A70348300A1E8D5 /* SettingsModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsModels.swift; sourceTree = "<group>"; };
 		77A809C92A6EDECD0041D72A /* AuthResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthResponse.swift; sourceTree = "<group>"; };
@@ -221,6 +225,8 @@
 				7752C0AB2A742B1000E20C82 /* AlbumDetailsResponse.swift */,
 				7752C0AD2A74306900E20C82 /* PlaylistDetailsResponse.swift */,
 				7768E2602A84C18400786017 /* AllCategoriesResponse.swift */,
+				7772CAA72A8CA22500BC9E46 /* SearchResultResponsse.swift */,
+				7772CAAA2A8CA51900BC9E46 /* SearchResults.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -433,6 +439,7 @@
 				773523962A69907600FA9CA4 /* HapticsManager.swift in Sources */,
 				7768E25F2A84B0C800786017 /* GenreCollectionViewCell.swift in Sources */,
 				77A809CA2A6EDECD0041D72A /* AuthResponse.swift in Sources */,
+				7772CAAB2A8CA51900BC9E46 /* SearchResults.swift in Sources */,
 				7764B2442A738AFA00B9C84A /* RecommendationsResponse.swift in Sources */,
 				77332ADE2A83971600F815E4 /* AlbumTrackCollectionViewCell.swift in Sources */,
 				7766AFD02A72BB27002C94A3 /* NewReleasesResponse.swift in Sources */,
@@ -450,6 +457,7 @@
 				7735239F2A6991CD00FA9CA4 /* Artist.swift in Sources */,
 				77A395482A70348300A1E8D5 /* SettingsModels.swift in Sources */,
 				773523542A698CEC00FA9CA4 /* SceneDelegate.swift in Sources */,
+				7772CAA82A8CA22500BC9E46 /* SearchResultResponsse.swift in Sources */,
 				773523872A698FFB00FA9CA4 /* PlayerViewController.swift in Sources */,
 				7752C0AC2A742B1000E20C82 /* AlbumDetailsResponse.swift in Sources */,
 				7735238D2A69902800FA9CA4 /* SearchResultViewController.swift in Sources */,
