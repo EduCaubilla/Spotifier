@@ -99,6 +99,8 @@ class SearchViewController: UIViewController, UISearchResultsUpdating, UISearchB
             return
         }
         
+        resultsController.delegate = self
+        
         APICaller.shared.search(with: query) { result in
             DispatchQueue.main.async {
                 switch result {
@@ -116,6 +118,25 @@ class SearchViewController: UIViewController, UISearchResultsUpdating, UISearchB
 
     }
     
+}
+
+extension SearchViewController: SearchResultsViewControllerDelegate{
+    func didTapResult(_ result: SearchResult) {
+        switch result {
+        case .artist(let model):
+            break
+        case .album(let model):
+            let vc = AlbumViewController(album: model)
+            vc.navigationItem.largeTitleDisplayMode = .never
+            navigationController?.pushViewController(vc, animated: true)
+        case .playlist(let model):
+            let vc = PlaylistViewController(playlist: model)
+            vc.navigationItem.largeTitleDisplayMode = .never
+            navigationController?.pushViewController(vc, animated: true)
+        case .track(let model):
+            break
+        }
+    }
 }
 
 //CollectionView content config
