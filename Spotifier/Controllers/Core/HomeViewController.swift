@@ -280,6 +280,7 @@ extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSour
         let section = sections[indexPath.section]
         
         switch section{
+            
             case .featuredPlaylists:
                 let playlist = playlists[indexPath.row]
                 let vc = PlaylistViewController(playlist: playlist)
@@ -287,6 +288,7 @@ extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSour
                 vc.navigationItem.largeTitleDisplayMode = .never
                 navigationController?.pushViewController(vc, animated: true)
                 break
+            
             case .newReleases:
                 let album = newAlbums[indexPath.row]
                 let vc = AlbumViewController(album: album)
@@ -294,8 +296,10 @@ extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSour
                 vc.navigationItem.largeTitleDisplayMode = .never
                 navigationController?.pushViewController(vc, animated: true)
                 break
+            
             case .recommendedTracks:
-                break
+            let track = tracks[indexPath.row]
+            PlaybackPresenter.startPlayback(from: self, track: track)
             }
     }
     
