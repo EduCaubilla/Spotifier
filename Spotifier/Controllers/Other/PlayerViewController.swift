@@ -6,9 +6,20 @@
 //
 
 import UIKit
+import SDWebImage
+
+protocol PlayerViewControllerDelegate: AnyObject {
+    func didTapPlayPause()
+    func didTapForward()
+    func didTapBackward()
+    func didSlideSlider(_ value: Float)
+}
 
 class PlayerViewController: UIViewController {
 
+    weak var dataSource: PlayerDataSource?
+    weak var delegate: PlayerViewControllerDelegate?
+    
     private let imageView: UIImageView = {
         let imageView = UIImageView()
         imageView.contentMode = .scaleAspectFill
@@ -25,6 +36,7 @@ class PlayerViewController: UIViewController {
         view.addSubview(controlsView)
         controlsView.delegate = self
         configureBarButtons()
+        configure()
     }
     
     override func viewDidLayoutSubviews() {
@@ -36,6 +48,15 @@ class PlayerViewController: UIViewController {
             width: view.width - 20,
             height: view.height - imageView.height - view.safeAreaInsets.top - view.safeAreaInsets.bottom - 15
         )
+    }
+    
+    private func configure() {
+        imageView.sd_setImage(with: dataSource?.imageURL, completed: nil)
+        controlsView.configure(
+            with: PlayerControlsViewViewModel(
+                title: dataSource?.songName,
+                subtitle: dataSource?.subtitle
+            ))
     }
 
     private func configureBarButtons(){
@@ -53,16 +74,20 @@ class PlayerViewController: UIViewController {
 }
 
 extension PlayerViewController: PlayerControlsViewDelegate {
+    
     func playerControlsViewDidTapPlayPauseButton(_ playersControlView: PlayerControlsView) {
-        <#code#>
+        delegate?.didTapPlayPause()
     }
     
     func playerControlsViewDidTapNextButton(_ playersControlView: PlayerControlsView) {
-        <#code#>
+        delegate?.didTapForward()
     }
     
     func playerControlsViewDidTapBackwardButton(_ playersControlView: PlayerControlsView) {
-        <#code#>
+        delegate?.didTapBackward()
     }
     
+    func playerControlsView(_ playersControlView: PlayerControlsView, didSlideSlider value: Float) {
+        delegate?.didSlideSlider(value)
+    }
 }
