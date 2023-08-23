@@ -29,12 +29,6 @@ final class PlaybackPresenter{
             return track
         }
         else if let player = self.playerQueue, !tracks.isEmpty {
-//            let item = player.currentItem
-//            let items = player.items()
-//
-//            guard let index = items.firstIndex(where: {$0 == item}) else {
-//                return nil
-//            }
             return tracks[index]
         }
         return nil
