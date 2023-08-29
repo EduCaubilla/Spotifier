@@ -203,7 +203,7 @@ extension PlaylistViewController: UICollectionViewDataSource, UICollectionViewDe
         let headerViewModel = PlaylistHeaderViewViewModel(
             name: playlist.name,
             ownerName: playlist.owner.display_name,
-            description: playlist.description,
+            description: playlist.owner.display_name,
             artworkURL: URL(string: playlist.images.first?.url ?? ""))
         header.configure(with: headerViewModel)
         header.delegate = self

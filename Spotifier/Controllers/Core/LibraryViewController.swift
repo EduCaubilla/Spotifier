@@ -50,17 +50,17 @@ class LibraryViewController: UIViewController {
     
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
-        scrollView.frame = CGRect(
-            x: 0,
-            y: view.safeAreaInsets.top + 55,
-            width: view.width,
-            height: view.height - view.safeAreaInsets.top - view.safeAreaInsets.bottom - 55
-        )
         toggleView.frame = CGRect(
             x: 0,
             y: view.safeAreaInsets.top,
             width: 200,
             height: 55
+        )
+        scrollView.frame = CGRect(
+            x: 0,
+            y: view.safeAreaInsets.top + 55,
+            width: view.width,
+            height: view.height - view.safeAreaInsets.top - view.safeAreaInsets.bottom - 55
         )
     }
     
@@ -80,7 +80,7 @@ class LibraryViewController: UIViewController {
 
 extension LibraryViewController: UIScrollViewDelegate {
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
-        if scrollView.contentOffset.x >= (view.width-50){
+        if scrollView.contentOffset.x >= (view.width-30){
             toggleView.update(for: .album)
             updateBarButtons()
         }
@@ -97,7 +97,7 @@ extension LibraryViewController: LibraryToggleViewDelegate {
         scrollView.setContentOffset(.zero, animated: true)
         updateBarButtons()
     }
-    func libraryToggleViewDidTapAlbum(_ toggleView: LibraryToggleView) {
+    func libraryToggleViewDidTapAlbums(_ toggleView: LibraryToggleView) {
         scrollView.setContentOffset(CGPoint(x: view.width, y: 0), animated: true)
         updateBarButtons()
     }

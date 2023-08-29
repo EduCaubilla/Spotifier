@@ -80,6 +80,46 @@ class AlbumViewController: UIViewController{
         collectionView.delegate = self
         collectionView.dataSource = self
         
+        fetchData()
+        
+        navigationItem.rightBarButtonItem = UIBarButtonItem(
+            barButtonSystemItem: .action,
+            target: self,
+            action: #selector(didTapShare)
+        )
+        
+        let actionAlbumButton = UIBarButtonItem(
+            barButtonSystemItem: .action,
+            target: self,
+            action: #selector(didTapActions)
+        )
+        navigationItem.rightBarButtonItems?.append(actionAlbumButton)
+    }
+    
+    @objc private func didTapActions(){
+        let actionsSheet = UIAlertController(
+            title: album.name,
+            message: "Actions",
+            preferredStyle: .actionSheet
+        )
+        
+        present(actionsSheet,animated: true,completion: nil)
+    }
+    
+    @objc private func didTapShare(){
+        guard let url = URL(string: album.href) else {
+            return
+        }
+        print(album.href)
+        let vc = UIActivityViewController(
+            activityItems: [url],
+            applicationActivities: []
+        )
+        vc.popoverPresentationController?.barButtonItem = navigationItem.rightBarButtonItem
+        present(vc, animated: true)
+    }
+    
+    private func fetchData(){
         APICaller.shared.getAlbumDetails(for: album){ [weak self] result in
             DispatchQueue.main.async {
                 switch result {
@@ -99,25 +139,6 @@ class AlbumViewController: UIViewController{
                 }
             }
         }
-        
-        navigationItem.rightBarButtonItem = UIBarButtonItem(
-            barButtonSystemItem: .action,
-            target: self,
-            action: #selector(didTapShare)
-        )
-    }
-    
-    @objc private func didTapShare(){
-        guard let url = URL(string: album.href) else {
-            return
-        }
-        print(album.href)
-        let vc = UIActivityViewController(
-            activityItems: [url],
-            applicationActivities: []
-        )
-        vc.popoverPresentationController?.barButtonItem = navigationItem.rightBarButtonItem
-        present(vc, animated: true)
     }
 
     override func viewDidLayoutSubviews() {

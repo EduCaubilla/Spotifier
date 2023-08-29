@@ -9,7 +9,7 @@ import UIKit
 
 protocol LibraryToggleViewDelegate: AnyObject{
     func libraryToggleViewDidTapPlaylist(_ toggleView: LibraryToggleView)
-    func libraryToggleViewDidTapAlbum(_ toggleView: LibraryToggleView)
+    func libraryToggleViewDidTapAlbums(_ toggleView: LibraryToggleView)
 }
 
 class LibraryToggleView: UIView {
@@ -72,7 +72,7 @@ class LibraryToggleView: UIView {
         UIView.animate(withDuration: 0.2) {
             self.layoutIndicator()
         }
-        delegate?.libraryToggleViewDidTapAlbum(self)
+        delegate?.libraryToggleViewDidTapAlbums(self)
     }
     
     override func layoutSubviews() {
@@ -94,7 +94,7 @@ class LibraryToggleView: UIView {
             )
         case .album:
             indicatorView.frame = CGRect(
-                x: playlistButton.width,
+                x: 100,
                 y: playlistButton.bottom,
                 width: 100,
                 height: 3
