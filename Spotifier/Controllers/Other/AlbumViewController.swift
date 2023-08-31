@@ -89,7 +89,7 @@ class AlbumViewController: UIViewController{
         )
         
         let actionAlbumButton = UIBarButtonItem(
-            barButtonSystemItem: .action,
+            barButtonSystemItem: .add,
             target: self,
             action: #selector(didTapActions)
         )
@@ -102,6 +102,15 @@ class AlbumViewController: UIViewController{
             message: "Actions",
             preferredStyle: .actionSheet
         )
+        actionsSheet.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
+        actionsSheet.addAction(UIAlertAction(title: "Save Album", style: .default, handler: { [weak self] _ in
+            guard let strongSelf = self else {return}
+            APICaller.shared.saveAlbum(album: strongSelf.album) { success in
+                if success {
+                    NotificationCenter.default.post(name:.albumSavedNotification, object: nil)
+                }
+            }
+        }))
         
         present(actionsSheet,animated: true,completion: nil)
     }
@@ -110,7 +119,6 @@ class AlbumViewController: UIViewController{
         guard let url = URL(string: album.href) else {
             return
         }
-        print(album.href)
         let vc = UIActivityViewController(
             activityItems: [url],
             applicationActivities: []

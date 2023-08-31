@@ -22,6 +22,8 @@ class LibraryAlbumsViewController: UIViewController {
         tableView.isHidden = true
         return tableView
     }()
+    
+    private var observer: NSObjectProtocol?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -31,6 +33,13 @@ class LibraryAlbumsViewController: UIViewController {
         view.addSubview(tableView)
         setUpNoAlbumsView()
         fetchData()
+        observer = NotificationCenter.default.addObserver(
+            forName: .albumSavedNotification,
+            object: nil,
+            queue: .main,
+            using: { [weak self] _ in
+                self?.fetchData()
+            })
     }
     
     @objc func didTapClose(){
@@ -40,21 +49,22 @@ class LibraryAlbumsViewController: UIViewController {
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
         noAlbumsView.frame = CGRect(x: (view.width-150)/2, y: (view.height-150)/2, width: 150, height: 150)
-        tableView.frame = view.bounds
+        tableView.frame = CGRect(x: 0, y: 0, width: view.width, height: view.height)
     }
-    
+     
     private func setUpNoAlbumsView(){
         view.addSubview(noAlbumsView)
         noAlbumsView.delegate = self
         noAlbumsView.configure(
             with: ActionLabelViewViewModel(
-                text: "You have not saved any albums yet",
+                text: "You have not saved any albums yet.",
                 actionTitle: "Browse"
             )
         )
     }
     
     private func fetchData(){
+        albums.removeAll()
         APICaller.shared.getCurrentUserAlbums { [weak self] result in
             DispatchQueue.main.async {
                 switch result {
@@ -121,6 +131,6 @@ extension LibraryAlbumsViewController: UITableViewDelegate, UITableViewDataSourc
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 50
+        return 70
     }
 }

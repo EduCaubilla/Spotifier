@@ -35,7 +35,6 @@ struct Album : Codable{
     let uri : String
 }
 
-
 //JSON Example
 
 //    {

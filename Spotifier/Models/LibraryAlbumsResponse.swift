@@ -8,5 +8,10 @@
 import Foundation
 
 struct LibraryAlbumsResponse: Codable {
-    let items: [Album]
+    let items: [AlbumUser]
+}
+
+struct AlbumUser: Codable {
+    let added_at: String
+    let album: Album
 }
